@@ -19,6 +19,39 @@
   #page-home main {
     align-items: center;
   }
+
+  #page-search-results .cards {
+    grid-template-columns: 1fr;
+  }
+
+  #page-search-results .cards img {
+    height: 200px;
+  }
+
+  #page-create-point .items-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  #page-create-point form .field-group {
+    flex-wrap: wrap;
+  }
+
+  #page-create-point form .field {
+    margin: 5px;
+  }
+
+  #page-create-point form {
+    padding: 8px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 550px) {
+  .items-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (min-width: 1700px) {
