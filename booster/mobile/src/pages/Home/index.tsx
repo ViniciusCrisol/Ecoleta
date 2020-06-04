@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Feather as Icon } from '@expo/vector-icons';
-import { View, ImageBackground, Text, Image, StyleSheet } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
-import axios from 'axios';
 import RNPickerSelect from 'react-native-picker-select';
 import { useNavigation } from '@react-navigation/native';
+import { Feather as Icon } from '@expo/vector-icons';
+import axios from 'axios';
+
+import { View, ImageBackground, Text, Image, StyleSheet } from 'react-native';
 
 interface IBGEUFResponse {
   sigla: string;
@@ -92,6 +93,7 @@ const Home: React.FC = () => {
             }))}
           />
         </View>
+
         <View style={styles.select}>
           <RNPickerSelect
             onValueChange={(value) => setSelectedCity(value)}
@@ -145,12 +147,27 @@ const styles = StyleSheet.create({
     lineHeight: 24,
   },
 
-  footer: {},
+  footer: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+
+  selectors: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 24,
+  },
 
   select: {
-    backgroundColor: 'white',
-    borderRadius: 8,
-    marginVertical: 4,
+    width: '100%',
+    height: 60,
+    backgroundColor: '#FFF',
+    borderRadius: 10,
+    marginBottom: 8,
+    paddingHorizontal: 24,
+    fontSize: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   button: {

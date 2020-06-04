@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Constants from 'expo-constants';
-import { Feather as Icon } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import MapView, { Marker } from 'react-native-maps';
 import { SvgUri } from 'react-native-svg';
 import * as Location from 'expo-location';
+import { Feather as Icon } from '@expo/vector-icons';
+
 import {
   View,
   StyleSheet,
@@ -45,11 +46,31 @@ const Points: React.FC = () => {
   const [points, setPoints] = useState<Point[]>([]);
 
   const [items, setItems] = useState<Item[]>([]);
+  const [selectedItems, setSelectedItems] = useState<number[]>([]);
   const [initialPosition, setInitialPosition] = useState<[number, number]>([
     0,
     0,
   ]);
-  const [selectedItems, setSelectedItems] = useState<number[]>([]);
+
+  function handleNavigateBack() {
+    navigation.goBack();
+  }
+
+  function handleNavigateToDatail(id: number) {
+    navigation.navigate('Detail', { point_id: id });
+  }
+
+  function handleSelectItem(id: number) {
+    const alreadySelected = selectedItems.findIndex((item) => item === id);
+
+    if (alreadySelected >= 0) {
+      const filteredItems = selectedItems.filter((item) => item !== id);
+
+      setSelectedItems(filteredItems);
+    } else {
+      setSelectedItems([...selectedItems, id]);
+    }
+  }
 
   useEffect(() => {
     api.get('items').then((response) => {
@@ -95,26 +116,6 @@ const Points: React.FC = () => {
         setPoints(response.data);
       });
   }, [selectedItems]);
-
-  function handleNavigateBack() {
-    navigation.goBack();
-  }
-
-  function handleNavigateToDatail(id: number) {
-    navigation.navigate('Detail', { point_id: id });
-  }
-
-  function handleSelectItem(id: number) {
-    const alreadySelected = selectedItems.findIndex((item) => item === id);
-
-    if (alreadySelected >= 0) {
-      const filteredItems = selectedItems.filter((item) => item !== id);
-
-      setSelectedItems(filteredItems);
-    } else {
-      setSelectedItems([...selectedItems, id]);
-    }
-  }
 
   return (
     <>

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Feather as Icon, FontAwesome } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 import * as MailComposer from 'expo-mail-composer';
+import { Feather as Icon, FontAwesome } from '@expo/vector-icons';
+
 import {
   View,
   StyleSheet,
@@ -81,6 +82,7 @@ const Detail: React.FC = () => {
             uri: data.point.image,
           }}
         />
+
         <Text style={styles.pointName}>{data.point.name}</Text>
         <Text style={styles.pointItems}>
           {data.items.map((item) => item.title).join(', ')}
@@ -93,6 +95,7 @@ const Detail: React.FC = () => {
           </Text>
         </View>
       </View>
+
       <View style={styles.footer}>
         <RectButton style={styles.button} onPress={handleWhatsApp}>
           <FontAwesome name='whatsapp' size={20} color='white' />
