@@ -50,7 +50,17 @@ form fieldset {
 }
 
 form legend {
+  width: 100%;
   margin-bottom: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+form legend span {
+  font-size: 14px;
+  color: var(--title-color);
 }
 
 form legend h2 {
