@@ -12,11 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap"
       rel="stylesheet"
     />
+    {% block styles %} {% endblock styles %}
     <link rel="stylesheet" href="styles/main.css" />
 
     <link rel="stylesheet" href="styles/responsive.css" />
-
-    {% block styles %} {% endblock styles %}
   </head>
   <body>
     <div id="{{ bodyId }}">

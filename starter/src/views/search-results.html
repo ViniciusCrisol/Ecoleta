@@ -6,36 +6,29 @@ styles %}
 %}
 
 <main>
-  <h4><strong>2 pontos</strong> encontrados</h4>
+  {% if total > 0 %}
+  <h4><strong>{{total}} pontos</strong> encontrados</h4>
 
   <div class="cards">
+    {% for place in places %}
+
     <div class="card">
-      <img
-        src="https://images.unsplash.com/photo-1528323273322-d81458248d40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=801&q=80"
-        alt="Colectoria"
-      />
-      <h1>Colectoria</h1>
-      <h3>Resíduos Eletrônicos</h3>
+      <img src="{{ place.image }}" alt="Colectoria" />
+      <h1>{{ place.name }}</h1>
+      <h3>{{ place.items }}</h3>
       <p>
-        Franca, São Paulo <br />
-        Vinícius Crisol, Jardim américa <br />
-        Número 2510
+        {{ place.city }}, {{ place.state }} <br />
+        {{ place.address }} <br />
+        {{ place.address2 }}
       </p>
     </div>
 
-    <div class="card">
-      <img
-        src="https://images.unsplash.com/photo-1533826114529-00704c85b39d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"
-        alt="Colectoria"
-      />
-      <h1>Papersider</h1>
-      <h3>Papéis e papelão</h3>
-      <p>
-        Franca, São Paulo <br />
-        Vinícius Crisol, Jardim américa <br />
-        Número 2510
-      </p>
-    </div>
+    {% endfor %}
   </div>
+  {% else %}
+
+  <h4><strong>Nenhum</strong> local encontrado =(</h4>
+
+  {% endif %}
 </main>
 {% endblock content %}

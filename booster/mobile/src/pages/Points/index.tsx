@@ -26,8 +26,9 @@ interface Item {
 
 interface Point {
   id: number;
-  image: string;
   name: string;
+  image: string;
+  image_url: string;
   latitude: number;
   longitude: number;
 }
@@ -101,9 +102,6 @@ const Points: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    console.log(routeParams.city);
-    console.log(routeParams.uf);
-
     api
       .get('points', {
         params: {
@@ -146,7 +144,7 @@ const Points: React.FC = () => {
                   style={styles.mapMarker}
                   onPress={() => handleNavigateToDatail(point.id)}
                   coordinate={{
-                    latitude: point.longitude,
+                    latitude: point.latitude,
                     longitude: point.longitude,
                   }}
                 >
@@ -154,7 +152,7 @@ const Points: React.FC = () => {
                     <Image
                       style={styles.mapMarkerImage}
                       source={{
-                        uri: point.image,
+                        uri: point.image_url,
                       }}
                     />
                     <Text style={styles.mapMarkerTitle}>{point.name}</Text>
