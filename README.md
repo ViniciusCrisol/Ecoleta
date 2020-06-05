@@ -30,7 +30,7 @@ a ciadde em que usuário se encontra para fazer a listagem, para isso foi usado 
 
 - 📙 Para o desenvolvimento do projeto foi usado Type Script.
 - 📚 Como conteúdo adicional, adionei o React Native Picker Select para a inserção de dados de cidade e estado.
-- 📘 Uma funcionalidade muito legal que foi adicionada no App Mobile foi o Deep-Linking para o whatsapp
+- 📘 Uma funcionalidade muito legal que foi adicionada no App Mobile foi o Deep-Linking para o whatsapp.
 
 ## 💻 Principais Tecnologias
 
