@@ -58,6 +58,6 @@ Imagem ainda não disponível =(
 
 #
 
-<p styles="align:center">
+<p align="center">
   Feito com muito ❤️ por Vinícius Crisol
 </p>
