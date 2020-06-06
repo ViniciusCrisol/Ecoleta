@@ -55,3 +55,9 @@ a ciadde em que usuário se encontra para fazer a listagem, para isso foi usado 
 #
 
 Imagem ainda não disponível =(
+
+#
+
+<p styles="align:center">
+  Feito com muito ❤️ por Vinícius Crisol
+</p>
