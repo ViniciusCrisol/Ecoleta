@@ -11,6 +11,8 @@ No módulo starter foi criada uma aplicação SSR com Node, fazendo uso do Expre
 
 Para o desenvolvimento do código foi usado TypeScript. Como conteúdo adicional, optei por usar o React Native Picker Select para a inserção de dados de cidade e estado no aplicativo mobile.
 
+#
+
 <p align="center">
   Feito com muito ❤️ por Vinícius Crisol
 </p>
